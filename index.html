@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lana Scents & Jewels | Luxury Fragrances & Jewelry</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            gold: '#D4AF37',
+                            goldhover: '#b5952f',
+                            light: '#FAF9F6',
+                            gray: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Product Card Hover Effects */
+        .product-card:hover .product-img { transform: scale(1.08); }
+        .product-card:hover .quick-view { opacity: 1; transform: translateY(0); }
+        
+        /* Fade in animation on scroll */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-brand-light font-sans text-brand-dark antialiased overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-gem text-brand-gold text-2xl"></i>
+                    <a href="#" class="font-serif text-2xl text-white font-semibold tracking-wide">
+                        Lana <span class="text-brand-gold font-light italic">Scents & Jewels</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#collections" class="text-gray-300 hover:text-brand-gold transition text-sm font-medium tracking-widest uppercase">Collections</a>
+                    <a href="#story" class="text-gray-300 hover:text-brand-gold transition text-sm font-medium tracking-widest uppercase">Our Story</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-gold transition text-sm font-medium tracking-widest uppercase">Contact</a>
+                    <a href="https://wa.me/2348000000000?text=Hi%20Lana,%20I'd%20like%20to%20place%20an%20order." target="_blank" class="bg-brand-gold text-brand-dark px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white transition-colors duration-300">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-screen flex items-center justify-center">
+        <!-- Background Image with Dark Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2000&auto=format&fit=crop" alt="Luxury Perfume" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-6 fade-in">Redefining Luxury</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-white font-semibold leading-tight mb-6 fade-in" style="transition-delay: 100ms;">
+                Captivate the Senses.<br> Adorn the Soul.
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto fade-in" style="transition-delay: 200ms;">
+                Discover our exclusive collections of long-lasting oil perfumes, premium Oud, and exquisite jewelry. Curated for those who appreciate the finer things.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in" style="transition-delay: 300ms;">
+                <a href="#collections" class="bg-brand-gold text-brand-dark px-8 py-4 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
+                    Shop The Collection
+                </a>
+                <a href="https://wa.me/2348000000000?text=Hi%20Lana,%20I%20have%20a%20question%20about%20your%20products." target="_blank" class="border border-white text-white px-8 py-4 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-brand-dark transition-all duration-300 transform hover:-translate-y-1">
+                    Chat With Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BANNER -->
+    <div class="bg-brand-dark py-6 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-20 text-brand-gold text-sm tracking-widest uppercase">
+            <span><i class="fa-solid fa-check-circle mr-2"></i> 100% Authentic</span>
+            <span><i class="fa-solid fa-truck-fast mr-2"></i> Nationwide Delivery</span>
+            <span><i class="fa-solid fa-gem mr-2"></i> Premium Quality</span>
+        </div>
+    </div>
+
+    <!-- PRODUCT COLLECTIONS -->
+    <section id="collections" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-4 text-brand-dark">The Signature Collection</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">From smart collections to exclusive oud, explore fragrances and jewelry designed to leave a lasting impression.</p>
+            </div>
+
+            <!-- Category Pills -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <button class="border border-brand-dark text-brand-dark px-6 py-2 rounded-full text-sm font-medium hover:bg-brand-dark hover:text-white transition">All Products</button>
+                <button class="border border-gray-300 text-gray-500 px-6 py-2 rounded-full text-sm font-medium hover:border-brand-dark transition">Perfume Oils</button>
+                <button class="border border-gray-300 text-gray-500 px-6 py-2 rounded-full text-sm font-medium hover:border-brand-dark transition">Smart Collections</button>
+                <button class="border border-gray-300 text-gray-500 px-6 py-2 rounded-full text-sm font-medium hover:border-brand-dark transition">Oud</button>
+                <button class="border border-gray-300 text-gray-500 px-6 py-2 rounded-full text-sm font-medium hover:border-brand-dark transition">Jewelry</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 -->
+                <div class="product-card group cursor-pointer fade-in" onclick="openModal('Midnight Oud', '₦45,000', 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=800&auto=format&fit=crop', 'A rich, deep, and long-lasting Oud fragrance designed for evening wear and special occasions.')">
+                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=800&auto=format&fit=crop" alt="Midnight Oud" class="product-img w-full h-full object-cover transition-transform duration-700 ease-in-out">
+                        <div class="quick-view absolute bottom-4 left-0 right-0 mx-auto w-3/4 bg-white/90 backdrop-blur text-center py-3 text-xs font-bold uppercase tracking-widest opacity-0 transform translate-y-4 transition-all duration-300">
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-brand-gold tracking-widest uppercase mb-1">Oud Collection</p>
+                        <h3 class="font-serif text-xl font-semibold text-brand-dark">Midnight Oud</h3>
+                        <p class="text-gray-500 mt-1 font-medium">₦45,000</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card group cursor-pointer fade-in" onclick="openModal('18K Gold Plated Necklace', '₦35,000', 'https://images.unsplash.com/photo-1599643478514-4a4102b8e8ce?q=80&w=800&auto=format&fit=crop', 'Elegant and timeless. This 18K gold-plated necklace is perfect for everyday wear or layering with your favorite pieces.')">
+                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1599643478514-4a4102b8e8ce?q=80&w=800&auto=format&fit=crop" alt="Necklace" class="product-img w-full h-full object-cover transition-transform duration-700 ease-in-out">
+                        <div class="quick-view absolute bottom-4 left-0 right-0 mx-auto w-3/4 bg-white/90 backdrop-blur text-center py-3 text-xs font-bold uppercase tracking-widest opacity-0 transform translate-y-4 transition-all duration-300">
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-brand-gold tracking-widest uppercase mb-1">Jewelry</p>
+                        <h3 class="font-serif text-xl font-semibold text-brand-dark">18K Gold Necklace</h3>
+                        <p class="text-gray-500 mt-1 font-medium">₦35,000</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card group cursor-pointer fade-in" onclick="openModal('Smart Collection - Summer Breeze', '₦18,500', 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop', 'A refreshing blend of citrus and floral notes. Perfect for the daytime. Comes in a sleek, travel-friendly bottle.')">
+                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop" alt="Smart Collection" class="product-img w-full h-full object-cover transition-transform duration-700 ease-in-out">
+                        <div class="quick-view absolute bottom-4 left-0 right-0 mx-auto w-3/4 bg-white/90 backdrop-blur text-center py-3 text-xs font-bold uppercase tracking-widest opacity-0 transform translate-y-4 transition-all duration-300">
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-brand-gold tracking-widest uppercase mb-1">Smart Collection</p>
+                        <h3 class="font-serif text-xl font-semibold text-brand-dark">Summer Breeze</h3>
+                        <p class="text-gray-500 mt-1 font-medium">₦18,500</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card group cursor-pointer fade-in" onclick="openModal('Sultry Body Spray', '₦12,000', 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop', 'A light, lingering body spray with notes of vanilla and sandalwood. Perfect for daily refreshment.')">
+                    <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop" alt="Body Spray" class="product-img w-full h-full object-cover transition-transform duration-700 ease-in-out">
+                        <div class="quick-view absolute bottom-4 left-0 right-0 mx-auto w-3/4 bg-white/90 backdrop-blur text-center py-3 text-xs font-bold uppercase tracking-widest opacity-0 transform translate-y-4 transition-all duration-300">
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-brand-gold tracking-widest uppercase mb-1">Body Spray</p>
+                        <h3 class="font-serif text-xl font-semibold text-brand-dark">Sultry Vanilla</h3>
+                        <p class="text-gray-500 mt-1 font-medium">₦12,000</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT STORY SECTION -->
+    <section id="story" class="py-24 bg-brand-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 fade-in">
+                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1000&auto=format&fit=crop" alt="Our Story" class="w-full h-auto object-cover rounded-sm shadow-2xl">
+            </div>
+            <div class="md:w-1/2 fade-in">
+                <h2 class="font-serif text-4xl font-semibold mb-6">The Art of <br><span class="text-brand-gold italic">Sophistication</span></h2>
+                <div class="w-16 h-1 bg-brand-gold mb-6"></div>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    At Lana Scents & Jewels, we believe that luxury should be personal. From the rich, intoxicating depths of our Oud collections to the delicate brilliance of our jewelry, every piece is curated to tell a story.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-8">
+                    Whether you are looking for a signature scent that lingers in the memory of others or a timeless piece of jewelry to mark a milestone, we are dedicated to providing you with unparalleled quality.
+                </p>
+                <a href="https://wa.me/2348000000000?text=Hi%20Lana,%20I'd%20like%20to%20know%20more%20about%20your%20brand." target="_blank" class="inline-block border border-brand-gold text-brand-gold px-8 py-3 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    Discover Our Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-black py-12 text-center text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-gem text-brand-gold text-xl"></i>
+                <span class="font-serif text-2xl text-white">Lana Scents & Jewels</span>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/2348000000000" target="_blank" class="text-gray-400 hover:text-brand-gold transition text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2026 Lana Scents & Jewels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348000000000?text=Hi%20Lana,%20I%20saw%20your%20website%20and%20I'm%20interested%20in%20your%20products." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform duration-300 z-40">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="productModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-white w-full max-w-4xl rounded-sm overflow-hidden flex flex-col md:flex-row shadow-2xl transform transition-transform duration-300 scale-95 opacity-0" id="modalBox">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black z-10 bg-white/80 rounded-full w-10 h-10 flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Image -->
+            <div class="md:w-1/2 h-64 md:h-auto bg-gray-100">
+                <img id="modalImg" src="" alt="Product" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Details -->
+            <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                <p class="text-brand-gold tracking-widest uppercase text-xs mb-2">Lana Exclusive</p>
+                <h2 id="modalTitle" class="font-serif text-3xl md:text-4xl font-semibold mb-4 text-brand-dark">Product Name</h2>
+                <p id="modalPrice" class="text-2xl font-medium text-gray-800 mb-6">₦00,000</p>
+                <div class="w-12 h-px bg-gray-300 mb-6"></div>
+                <p id="modalDesc" class="text-gray-600 leading-relaxed mb-8 text-sm md:text-base">
+                    Product description goes here.
+                </p>
+                
+                <button id="modalOrderBtn" class="w-full bg-brand-dark text-white py-4 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp
+                </button>
+                <p class="text-center text-xs text-gray-400 mt-4">Secure your order directly with our concierge.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Fade in on scroll logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Modal Logic
+        const modal = document.getElementById('productModal');
+        const modalBox = document.getElementById('modalBox');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalOrderBtn = document.getElementById('modalOrderBtn');
+
+        // Dummy WhatsApp Number (Replace with real one)
+        const whatsappNumber = "2348000000000"; 
+
+        function openModal(title, price, img, desc) {
+            // Populate data
+            modalImg.src = img;
+            modalTitle.innerText = title;
+            modalPrice.innerText = price;
+            modalDesc.innerText = desc;
+            
+            // Set WhatsApp link dynamically
+            const message = encodeURIComponent(`Hi Lana, I'd like to order the "${title}" for ${price}. Is it available?`);
+            modalOrderBtn.onclick = () => window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+
+            // Show modal with animation
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Small delay for CSS transition
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95', 'opacity-0');
+                modalBox.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalBox.classList.remove('scale-100', 'opacity-100');
+            modalBox.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
